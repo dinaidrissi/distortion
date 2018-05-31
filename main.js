@@ -1,6 +1,6 @@
 "use strict";
 //fecth the json file
-document.addEventListener("DOMContent", getJson);
+document.addEventListener("DOMContentLoaded", getJson);
 
 async function getJson(){
     let dataJson = await fetch("https://kea-alt-del.dk/kata-distortion/");
