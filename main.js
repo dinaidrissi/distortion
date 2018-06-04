@@ -1,25 +1,52 @@
 "use strict";
-//fecth the json file
-document.addEventListener("DOMContentLoaded", getJson);
+document.addEventListener("DOMContentLoaded",getData);
+setInterval(()=>{
+    getData();
+    document.querySelector("#list").innerHTML = "";
+}, 10000);
+async function getData() {  
+let jsonData = await fetch("https://kea-alt-del.dk/kata-distortion/");
+ let myJson = await jsonData.json();
+console.log(myJson);
+showData(myJson);
 
-async function getJson(){
-    let dataJson = await fetch("https://kea-alt-del.dk/kata-distortion/");
-    let myJson = await dataJson.json();
-    console.log(myJson);
-
+ }
+ 
+ function showData(data){
+    let list = document.querySelector("#list");
+    let template = document.querySelector("#template").content;
+    
+        let clone = template.cloneNode(true);
+        let queue = clone.querySelector("#queue");
+        queue.textContent = data.inQueue;
+        queue.style.width = 4 * data.inQueue + "%";
+        clone.querySelector("#name").textContent = data.name;
+        clone.querySelector("#idNumber").textContent = data.id;
+        clone.querySelector("#loggedAt").textContent = data.loggedAt;
+        list.appendChild(clone);
 }
-//put into the template
-functin showData(data){
-    let list = document.querySelector("#info");
-    let myTemplate = document.querySelector("#infostemplate").content;
+// //fecth the json file
+// document.addEventListener("DOMContentLoaded", getJson);
 
-    let clone = myTemplate.cloneNode(true);
-   clone.querySelector("#infoscontainer").textContent = list.inQueue;
-   console.log(list.inQueue);
-}
-//refresh every 10 sec
-setTimeout(function(){
-    window.location.reload(1);
- }, 5000);
+// async function getJson(){
+//     let dataJson = await fetch("https://kea-alt-del.dk/kata-distortion/");
+//     let myJson = await dataJson.json();
+//     console.log(myJson);
 
-//animation
+// }
+// //put into the template
+// function showData(data){
+//     let list = document.querySelector("#infostemplate");
+//     let myTemplate = document.querySelector("#info").content;
+
+//     let clone = list.cloneNode("true");
+//    //clone.querySelector(".queue").textContent = list.inQueue;
+//    console.log(clone.querySelector(".queue").textContent);
+//    myTemplate.appendChild(clone);
+// }
+// //refresh every 10 sec
+// setTimeout(function(){
+//     window.location.reload(1);
+//  }, 5000);
+
+// //animation

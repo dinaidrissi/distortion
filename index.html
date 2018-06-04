@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Distortion</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <article id ="info"></article>
-    <template id="infostemplate">
-        <section id="infoscontainer">
-            <p class="name"></p>
-            <p class="idnumber"></p>
-            <p class="queue"></p>
-            <p class="logtime"></p>
-        </section>
+        <div id="wrapper">
+                <svg id="meter">
+                    <circle id="outline_curves" class="circle outline"  cx="50%" cy="50%">
+                    </circle>
+                    <circle id="low" class="circle range" cx="50%" cy="50%" stroke="#FDE47F">
+                    </circle>
+                    <circle id="avg" class="circle range" cx="50%" cy="50%" stroke="#7CCCE5">
+                    </circle>
+                    <circle id="high" class="circle range" cx="50%" cy="50%" stroke="#E04644">
+                    </circle>
+                    <circle id="mask" class="circle" cx="50%" cy="50%" >
+                    </circle>
+                    <circle id="outline_ends" class="circle outline" cx="50%" cy="50%">
+                    </circle>
+                </svg>
+                <img id="meter_needle" src="svg-meter-gauge-needle.svg" alt="">
+                <input id="slider" type="range" min="0" max="100" value="0" /> 
+                <label id="lbl" id="value" for="">0%</label>
+                </div>
+    <section id="list"></section>
+    <template id="template">
+            <h4 id="name">Hi mom</h4> 
+            <h4 id="idNumber">Hi mom</h4> 
+            <h4 id="loggedAt">Hi mom</h4> 
+        <h4 id="queue">Hi mom</h4> 
     </template>
     <script src="main.js"></script>
 </body>
