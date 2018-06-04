@@ -1,9 +1,9 @@
 "use strict";
 document.addEventListener("DOMContentLoaded",getData);
-setInterval(()=>{
-    getData();
-    document.querySelector("#list").innerHTML = "";
-}, 10000);
+setTimeout(function(){
+    window.location.reload(1);
+ }, 10000);
+
 async function getData() { 
    
 let jsonData = await fetch("https://kea-alt-del.dk/kata-distortion/");

@@ -63,8 +63,9 @@ h4 {
 		    position: absolute;
 		    right: 0;
 		    top: 10%;
-		    transform-origin: bottom center;
-		    transform: rotate(270deg);
+            transform-origin: bottom center;
+            /* transform: rotate(270deg); */
+            transition: rotate(270deg) 10s;
 		}
         
         input[type=range] {
