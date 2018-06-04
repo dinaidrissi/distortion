@@ -8,31 +8,35 @@
     <title>Document</title>
 </head>
 <body>
-        <div id="wrapper">
-                <svg id="meter">
-                    <circle id="outline_curves" class="circle outline"  cx="50%" cy="50%">
-                    </circle>
-                    <circle id="low" class="circle range" cx="50%" cy="50%" stroke="#FDE47F">
-                    </circle>
-                    <circle id="avg" class="circle range" cx="50%" cy="50%" stroke="#7CCCE5">
-                    </circle>
-                    <circle id="high" class="circle range" cx="50%" cy="50%" stroke="#E04644">
-                    </circle>
-                    <circle id="mask" class="circle" cx="50%" cy="50%" >
-                    </circle>
-                    <circle id="outline_ends" class="circle outline" cx="50%" cy="50%">
-                    </circle>
-                </svg>
-                <img id="meter_needle" src="svg-meter-gauge-needle.svg" alt="">
-                <input id="slider" type="range" min="0" max="100" value="0" /> 
-                <label id="lbl" id="value" for="">0%</label>
-                </div>
+        
     <section id="list"></section>
+    <div id="wrapper">
+            <svg id="meter">
+                <circle id="outline_curves" class="circle outline"  cx="50%" cy="50%">
+                </circle>
+                <circle id="low" class="circle range" cx="50%" cy="50%" stroke="#FDE47F">
+                </circle>
+                <circle id="avg" class="circle range" cx="50%" cy="50%" stroke="#7CCCE5">
+                </circle>
+                <circle id="high" class="circle range" cx="50%" cy="50%" stroke="#E04644">
+                </circle>
+                <circle id="mask" class="circle" cx="50%" cy="50%" >
+                </circle>
+                <circle id="outline_ends" class="circle outline" cx="50%" cy="50%">
+                </circle>
+            </svg>
+            <img id="meter_needle" src="svg-meter-gauge-needle.svg" alt="">
+            <!-- <label id="lbl" id="value" for="">0%</label> -->
+            
+            </div>
     <template id="template">
-            <h4 id="name">Hi mom</h4> 
+        <h4 id="name">Hi mom</h4> 
+            <div class="grid">
             <h4 id="idNumber">Hi mom</h4> 
             <h4 id="loggedAt">Hi mom</h4> 
-        <h4 id="queue">Hi mom</h4> 
+            <h4 id="queue">Hi mom</h4> 
+        </div>          
+        
     </template>
     <script src="main.js"></script>
 </body>

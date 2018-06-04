@@ -1,13 +1,26 @@
 html{
     background-color: #FD9080;
 }
-#queue{
-    height: 10vh;
-    background:#72CAAC;
-    margin: auto;
-    left:0;
-    right:0;
-    display: block;
+
+h4 {
+    background-color: #4B4C51; 
+    border-radius: 2px;
+    color: white;   
+    font-family: 'courier new';
+    font-size: 15pt;
+    font-weight: bold;
+    padding: 4px 4px 2px 4px;
+    right: -48px;
+    top: 57%;
+}
+#name{
+   text-align: center;
+   font-size: 2em;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
 }
 
 #wrapper {position: relative;  margin: auto;}

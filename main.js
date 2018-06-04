@@ -4,7 +4,8 @@ setInterval(()=>{
     getData();
     document.querySelector("#list").innerHTML = "";
 }, 10000);
-async function getData() {  
+async function getData() { 
+   
 let jsonData = await fetch("https://kea-alt-del.dk/kata-distortion/");
  let myJson = await jsonData.json();
 console.log(myJson);
@@ -18,21 +19,28 @@ showData(myJson);
     
         let clone = template.cloneNode(true);
         let queue = clone.querySelector("#queue");
-        queue.textContent = data.inQueue;
-        queue.style.width = 4 * data.inQueue + "%";
+        queue.textContent = "Queue number: " + data.inQueue;
+        
         clone.querySelector("#name").textContent = data.name;
-        clone.querySelector("#idNumber").textContent = data.id;
-        clone.querySelector("#loggedAt").textContent = data.loggedAt;
+        clone.querySelector("#idNumber").textContent = "Id number: " + data.id;
+        clone.querySelector("#loggedAt").textContent = "Logged in at: " +data.loggedAt;
+
+       
+            var meter_value = semi_cf - ((data.inQueue * semi_cf) / 25);
+            mask.setAttribute('stroke-dasharray', meter_value + ',' + cf);
+            meter_needle.style.transform = 'rotate(' + (270 + ((data.inQueue * 180) / 25)) + 'deg)';
+            // lbl.textContent = data.inQueue;
+        
         list.appendChild(clone);
 }
+ /* set radius for all circles */
+ var r = 400;
+ var circles = document.querySelectorAll('.circle');
+ var total_circles = circles.length;
+ for (var i = 0; i < total_circles; i++) {
+     circles[i].setAttribute('r', r);
+ } 
 
-/* set radius for all circles */
-var r = 400;
-var circles = document.querySelectorAll('.circle');
-var total_circles = circles.length;
-for (var i = 0; i < total_circles; i++) {
-    circles[i].setAttribute('r', r);
-}
 /* set meter's wrapper dimension */
 var meter_dimension = (r * 2) + 100;
 var wrapper = document.querySelector('#wrapper');
@@ -57,14 +65,9 @@ document.querySelector('#mask')
     .setAttribute('stroke-dasharray', semi_cf + ',' + cf);
 /*bind range slider event*/
 var slider = document.querySelector('#slider');
-var lbl = document.querySelector("#lbl");
+// var lbl = document.querySelector("#lbl");
 var mask = document.querySelector('#mask');
 var meter_needle =  document.querySelector('#meter_needle');
-function range_change_event() {
-    var percent = slider.value;
-    var meter_value = semi_cf - ((percent * semi_cf) / 100);
-    mask.setAttribute('stroke-dasharray', meter_value + ',' + cf);
-    meter_needle.style.transform = 'rotate(' + (270 + ((percent * 180) / 100)) + 'deg)';
-    lbl.textContent = percent + '%';
-}
-slider.addEventListener('input', range_change_event);
+
+
+
